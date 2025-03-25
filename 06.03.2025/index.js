@@ -51,20 +51,6 @@ app.get("/about", (req, res) => {
 
 // This is a basic example of how to use the morgan middleware to log HTTP requests to a file in an Express.js application. You can customize the log format and destination based on your requirements.
 
-// Error handling middleware
-
-// Custom error handling middleware
-const errorHandler = (err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send("Something went wrong!");
-};
-
-app.use((req, res, next) => {
-  throw new Error("Something broke!");
-});
-
-app.use(errorHandler);
-
 app.listen(3000, () => {
   console.log(`Server is running on http://localhost:3000/`);
 });
